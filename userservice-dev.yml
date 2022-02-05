@@ -6,3 +6,5 @@ spring:
     password: 6330sung
 
 greetings: hello
+member-service:
+  url: http://127.0.0.1:8080
