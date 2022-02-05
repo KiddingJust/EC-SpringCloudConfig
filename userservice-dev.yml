@@ -7,4 +7,4 @@ spring:
 
 greetings: hello
 member-service:
-  url: http://127.0.0.1:8080
+  url: http://127.0.0.1:8080/api/v3/member/%s
