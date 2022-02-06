@@ -1,6 +1,6 @@
 eureka:
   instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:8081}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:8000}
   client:
     register-with-eureka: true
     fetch-registry: true
