@@ -16,7 +16,7 @@ eureka:
           postLogger: true
       routes:
       - id: user-service
-        uri: lb://USER-SERVICE
+        uri: lb://USERSERVICE
         predicates:
         - Path=/user-service/login
         - Method=POST
@@ -25,7 +25,7 @@ eureka:
         - RewritePath=/user-service/(?<segment>.*), /$\{segment}
       #회원가입 요청 
       - id: user-service
-        uri: lb://USER-SERVICE
+        uri: lb://USERSERVICE
         predicates:
         - Path=/user-service/users
         - Method=POST
@@ -34,7 +34,7 @@ eureka:
         - RewritePath=/user-service/(?<segment>.*), /$\{segment}
       #기타 요청 (welcome, healthcheck 등) - Header의 토큰도 체크. 
       - id: user-service
-        uri: lb://USER-SERVICE
+        uri: lb://USERSERVICE
         predicates:
         - Path=/user-service/**
         - Method=GET
@@ -44,7 +44,7 @@ eureka:
 #         - AuthorizationHeaderFilter
       #user-service actuator
       - id: user-service
-        uri: lb://USER-SERVICE
+        uri: lb://USERSERVICE
         predicates:
         - Path=/user-service/actuator/**
         - Method=GET,POST
@@ -52,7 +52,7 @@ eureka:
         - RemoveRequestHeader=Cookie
         - RewritePath=/user-service/(?<segment>.*), /$\{segment}
       - id: order-service
-        uri: lb://ORDER-SERVICE
+        uri: lb://ORDERSERVICE
         predicates:
         - Path=/order-service/actuator/**
         - Method=GET,POST
