@@ -33,7 +33,7 @@ spring:
         filters:
         - RemoveRequestHeader=Cookie
         - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-      #기타 요청 (welcome, healthcheck 등) - Header의 토큰도 체크. 
+      #기타 요청 (welcome, healthcheck 등) - Header의 토큰 체크. 
       - id: user-service
         uri: lb://USERSERVICE
         predicates:
@@ -42,7 +42,7 @@ spring:
         filters:
         - RemoveRequestHeader=Cookie
         - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-#         - AuthorizationHeaderFilter
+        - AuthorizationHeaderFilter
       #user-service actuator
       - id: user-service
         uri: lb://USERSERVICE
