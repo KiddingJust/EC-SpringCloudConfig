@@ -59,3 +59,13 @@ eureka:
         filters:
         - RemoveRequestHeader=Cookie
         - RewritePath=/order-service/(?<segment>.*), /$\{segment}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+  endpoint:
+    gateway:
+      enabled: true
+    
