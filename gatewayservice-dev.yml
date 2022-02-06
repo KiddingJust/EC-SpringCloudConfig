@@ -68,4 +68,4 @@ management:
   endpoint:
     gateway:
       enabled: true
-    
+
